@@ -1,16 +1,12 @@
 version: "3.7"
 
 services:
-  vue-app:
+  client:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: vue-app
-    restart: always
+    volumes:
+      - ./:/app
+    command: npm run dev --host 0.0.0.0 --port 8080
     ports:
-      - "8080:8080"
-    networks:
-      - vue-network
-networks:
-  vue-network:
-    driver: bridge
+      - "8080:5173"

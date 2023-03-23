@@ -1,0 +1,2 @@
+docker build -t sazid/docker-vuejs-nginx .
+docker run -it -p 8080:80 -d --name docker-vuejs-nginx sazid/docker-vuejs-nginx
